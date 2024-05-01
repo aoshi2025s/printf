@@ -6,16 +6,20 @@
 #    By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 02:51:55 by yoaoki            #+#    #+#              #
-#    Updated: 2024/05/01 22:32:16 by yoaoki           ###   ########.fr        #
+#    Updated: 2024/05/02 02:55:16 by yoaoki           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = 
+SRCS_NORMAL = src/ft_printf.c\
+	   src/ft_put_convert.c\
+	   src/ft_print_char.c\
+	   src/ft_print_str.c\
+	   src/ft_print_percent.c\
 
-BONUS = $(SRCS)
+BONUS = $(SRCS_NORMAL)
 
-OBJS = $(SRCS:.c=.o)
-BONUS_OBJS = $(BONUS:.c=.o)
+OBJS_NORMAL = $(SRCS_NORMAL:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a
