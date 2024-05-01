@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 02:42:02 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/01 10:00:24 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/02 02:34:09 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@
 # include "libft.h"
 # include <stdarg.h>
 
-int	ft_printf(const char *s, ...);
+
+int	ft_printf(const char *format, ...);
+
+int	ft_put_convert(const char *str, va_list *ap);
+int	ft_print_char(va_list *ap);
+int	ft_print_str(va_list *ap);
+//int	ft_print_ptr(va_list *ap);
+//int	ft_print_nbr(va_list *ap);
+//int	ft_print_i?(va_list *ap);
+//int	ft_print_u?(va_list *ap);
+//int	ft_print_hex_low(va_list *ap);
+//int	ft_print_hex_up(va_list *ap);
+int	ft_print_percent(void);
 
 #endif
