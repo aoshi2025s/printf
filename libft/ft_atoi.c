@@ -6,13 +6,13 @@
 /*   By: yoaoki <yoaoki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:05:27 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/04/30 01:25:22 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/01 22:28:20 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	return (c == ' ' || (c >= 9 && c <= 13));
 }

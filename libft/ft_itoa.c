@@ -6,13 +6,13 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 01:01:08 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/04/24 19:51:27 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/01 22:28:30 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_numlen(long long n)
+static size_t	ft_numlen(long long n)
 {
 	size_t	len;
 

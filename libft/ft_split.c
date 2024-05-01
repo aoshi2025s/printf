@@ -6,13 +6,13 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 02:09:28 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/04/26 16:09:30 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/01 22:29:02 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	term_counter(char const *s, char c)
+static size_t	term_counter(char const *s, char c)
 {
 	size_t	count;
 	int		in_term;
@@ -33,7 +33,7 @@ size_t	term_counter(char const *s, char c)
 	return (count);
 }
 
-void	split_free(char **result, int count)
+static void	split_free(char **result, int count)
 {
 	while (count > 0)
 	{
@@ -43,7 +43,7 @@ void	split_free(char **result, int count)
 	free(result);
 }
 
-char	*ft_strndup(char const *src, size_t size)
+static char	*ft_strndup(char const *src, size_t size)
 {
 	char	*result;
 
@@ -54,7 +54,7 @@ char	*ft_strndup(char const *src, size_t size)
 	return (result);
 }
 
-int	split_dup(char **result, char const *s, char c, size_t i)
+static int	split_dup(char **result, char const *s, char c, size_t i)
 {
 	size_t	split_len;
 
