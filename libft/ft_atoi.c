@@ -38,7 +38,7 @@ int	is_underflow(long long num, int c)
 int	ft_atoi(const char *str)
 {
 	long long	result;
-	int					minus;
+	int			minus;
 
 	result = 0;
 	minus = 1;
