@@ -6,14 +6,17 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 19:15:33 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/04/23 19:49:32 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/02 00:28:45 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	int result;
+	
+	result = ft_putstr_fd(s, fd);
+	result += write(fd, "\n", 1);
+	return (result);
 }

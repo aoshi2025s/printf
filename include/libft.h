@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 19:31:02 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/04/24 21:46:16 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/02 00:41:51 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,11 @@ void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memmove(void *s1, const void *s2, size_t n);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
-void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char *s, int fd);
-void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
+
+int				ft_putchar_fd(char c, int fd);
+int				ft_putstr_fd(char *s, int fd);
+int				ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd); // should change return value : void -> int
 
 t_list				*ft_lstnew(void *content);
 t_list				*ft_lstlast(t_list *lst);

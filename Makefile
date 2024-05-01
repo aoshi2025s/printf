@@ -6,7 +6,7 @@
 #    By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 02:51:55 by yoaoki            #+#    #+#              #
-#    Updated: 2024/05/01 02:56:35 by yoaoki           ###   ########.fr        #
+#    Updated: 2024/05/01 22:32:16 by yoaoki           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 AR = ar rcs
 
-ifdef IS_BONUS
+ifdef WITH_BONUS
 	OBJS = $(OBJS_BONUS)
 else
 	OBJS = $(OBJS_NORMAL)
@@ -45,7 +45,7 @@ $(NAME): $(LIBFT) $(OBJS)
 all: ${NAME}
 
 bonus: 
-	@make IS_BONUS=1 $(NAME)
+	@make WITH_BONUS=1 $(NAME)
 
 clean:
 	$(RM) $(OBJS_NORMAL) $(OBJS_BONUS)
