@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 21:18:55 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/03 21:24:49 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/04 04:32:06 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,14 @@ int	ft_print_hex(va_list *ap)
 
 	num = va_arg(*ap, unsigned int);
 	ft_puthex_fd(num, 1);
+	return (ft_hexlen(num));
+}
+
+int	ft_print_hexup(va_list *ap)
+{
+	unsigned int	num;
+
+	num = va_arg(*ap, unsigned int);
+	ft_puthexup_fd(num, 1);
 	return (ft_hexlen(num));
 }
