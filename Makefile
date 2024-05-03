@@ -6,7 +6,7 @@
 #    By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 02:51:55 by yoaoki            #+#    #+#              #
-#    Updated: 2024/05/02 02:55:16 by yoaoki           ###   ########.fr        #
+#    Updated: 2024/05/03 00:30:20 by yoaoki           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ SRCS_NORMAL = src/ft_printf.c\
 	   src/ft_print_char.c\
 	   src/ft_print_str.c\
 	   src/ft_print_percent.c\
+	   src/ft_print_int.c\
+	   src/ft_numlen.c\
 
 BONUS = $(SRCS_NORMAL)
 
