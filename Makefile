@@ -6,11 +6,11 @@
 #    By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 02:51:55 by yoaoki            #+#    #+#              #
-#    Updated: 2024/05/03 23:08:38 by yoaoki           ###   ########.fr        #
+#    Updated: 2024/05/04 05:18:55 by yoaoki           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS_NORMAL = src/ft_printf.c\
+SRCS = src/ft_printf.c\
 	   src/ft_put_convert.c\
 	   src/ft_print_char.c\
 	   src/ft_print_str.c\
@@ -24,10 +24,8 @@ SRCS_NORMAL = src/ft_printf.c\
 	   src/ft_numlen.c\
 	   src/ft_putptr_fd.c\
 
-BONUS = $(SRCS_NORMAL)
 
-OBJS_NORMAL = $(SRCS_NORMAL:.c=.o)
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
 LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a
@@ -40,12 +38,6 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 AR = ar rcs
 
-ifdef WITH_BONUS
-	OBJS = $(OBJS_BONUS)
-else
-	OBJS = $(OBJS_NORMAL)
-endif
-
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INCLUDES)
 
@@ -56,11 +48,8 @@ $(NAME): $(LIBFT) $(OBJS)
 
 all: ${NAME}
 
-bonus: 
-	@make WITH_BONUS=1 $(NAME)
-
 clean:
-	$(RM) $(OBJS_NORMAL) $(OBJS_BONUS)
+	$(RM) $(OBJS)
 	@make -C $(LIBFT_PATH) clean
 
 fclean: clean
