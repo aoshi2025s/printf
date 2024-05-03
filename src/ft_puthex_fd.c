@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_puthex_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 02:25:03 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/03 20:46:41 by yoaoki           ###   ########.fr       */
+/*   Created: 2024/05/03 23:05:22 by yoaoki            #+#    #+#             */
+/*   Updated: 2024/05/03 23:17:18 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_str(va_list *ap)
+void	ft_puthex_fd(unsigned int num, int fd)
 {
-	char	*str;
-
-	str = va_arg(*ap, char *);
-	if (!str)
-		return (ft_putstr_fd("(null)", 1));
-	return (ft_putstr_fd(str, 1));
+	if (num < 16)
+	{
+		ft_putchar_fd(BASE[num % 16], fd);
+	}
+	if (num >= 16)
+	{
+		ft_puthex_fd(num / 16, fd);
+		ft_putchar_fd(BASE[num % 16], fd);
+	}
 }

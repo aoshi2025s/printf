@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 02:42:02 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/03 16:39:58 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/03 23:07:47 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_print_str(va_list *ap);
 int	ft_print_ptr(va_list *ap);
 int	ft_print_int(va_list *ap);
 int	ft_print_uint(va_list *ap);
-// int	ft_print_hex_low(va_list *ap);
+int	ft_print_hex(va_list *ap);
 // int	ft_print_hex_up(va_list *ap);
 int	ft_print_percent(void);
 
@@ -34,4 +34,5 @@ int	ft_print_percent(void);
 int	ft_numlen(long long n);
 void	ft_putuint_fd(unsigned int n, int fd);
 void	ft_putptr_fd(unsigned long long n, int fd);
+void	ft_puthex_fd(unsigned int n, int fd);
 #endif

@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 02:22:54 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/03 14:45:46 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/03 21:26:48 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	ft_put_convert(const char *str, va_list *ap)
 	if (*str == 'u')
 		return (ft_print_uint(ap));
 	if (*str == 'x')
-		return (0);
+		return (ft_print_hex(ap));
 	if (*str == 'X')
-		return (0);
+		return (ft_print_hex(ap));
 	if (*str == '%')
 		return (ft_print_percent());
 	return (0);
