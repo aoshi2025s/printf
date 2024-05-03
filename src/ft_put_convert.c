@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 02:22:54 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/03 14:27:35 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/03 14:45:46 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_put_convert(const char *str, va_list *ap)
 	if (*str == 's')
 		return (ft_print_str(ap));
 	if (*str == 'p')
-		return (0);
+		return (ft_print_ptr(ap));
 	if (*str == 'd')
 		return (ft_print_int(ap));
 	if (*str == 'i')

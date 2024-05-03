@@ -6,22 +6,22 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 01:31:21 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/03 14:18:43 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/03 16:41:31 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putuint_fd(unsigned int num)
+void	ft_putuint_fd(unsigned int num, int fd)
 {
 	if (num < 10)
 	{
-		ft_putchar_fd(num % 10 + '0', 1);
+		ft_putchar_fd(num % 10 + '0', fd);
 	}
 	if (num >= 10)
 	{
-		ft_putuint_fd(num / 10);
-		ft_putchar_fd(num % 10 + '0', 1);
+		ft_putuint_fd(num / 10, fd);
+		ft_putchar_fd(num % 10 + '0', fd);
 	}
 }
 

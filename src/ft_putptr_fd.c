@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_uint.c                                    :+:      :+:    :+:   */
+/*   ft_putptr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 01:31:21 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/03 16:42:37 by yoaoki           ###   ########.fr       */
+/*   Created: 2024/05/03 16:27:14 by yoaoki            #+#    #+#             */
+/*   Updated: 2024/05/03 16:44:29 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_uint(va_list *ap)
+void	ft_putptr_fd(unsigned long long num, int fd)
 {
-	unsigned int	n;
-
-	n = va_arg(*ap, unsigned int);
-	ft_putuint_fd(n, 1);
-	return (ft_numlen(n));
+	if (num < 16)
+	{
+		ft_putchar_fd(BASE[num % 16], fd);
+	}
+	if (num >= 16)
+	{
+		ft_putptr_fd(num / 16, 1);
+		ft_putchar_fd(BASE[num % 16], fd);
+	}
 }
-
-// 12345
-// ft_print_uint(12345) -> ft_putchar_fd('5', 1);
-// ft_print_uint(1234) -> ft_putchar_fd('4', 1);
-// ft_print_uint(123) -> ft_putchar_fd('3', 1);
-// ft_print_uint(12) -> ft_putchar_fd('2', 1);
-// ft_print_uint(1) -> ft_putchar_fd('1', 1);

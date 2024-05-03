@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_uint.c                                    :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 01:31:21 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/03 16:42:37 by yoaoki           ###   ########.fr       */
+/*   Created: 2024/05/03 14:39:44 by yoaoki            #+#    #+#             */
+/*   Updated: 2024/05/03 16:54:13 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_uint(va_list *ap)
+static int	ft_ptrlen(unsigned long long num)
 {
-	unsigned int	n;
+	int	len;
 
-	n = va_arg(*ap, unsigned int);
-	ft_putuint_fd(n, 1);
-	return (ft_numlen(n));
+	len = 0;
+	while (num >= 16)
+	{
+		num /= 16;
+		len++;
+	}
+	len++;
+	return (len);
 }
 
-// 12345
-// ft_print_uint(12345) -> ft_putchar_fd('5', 1);
-// ft_print_uint(1234) -> ft_putchar_fd('4', 1);
-// ft_print_uint(123) -> ft_putchar_fd('3', 1);
-// ft_print_uint(12) -> ft_putchar_fd('2', 1);
-// ft_print_uint(1) -> ft_putchar_fd('1', 1);
+int	ft_print_ptr(va_list *ap)
+{
+	unsigned long long ptr;
+
+	ptr = va_arg(*ap, unsigned long long);
+	ft_putstr_fd("0x", 1);
+	ft_putptr_fd(ptr, 1);
+	return (ft_ptrlen(ptr) + ft_strlen("0x"));
+}
+
