@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 02:22:54 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/03 02:09:57 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/03 14:27:35 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_put_convert(const char *str, va_list *ap)
 	if (*str == 'i')
 		return (ft_print_int(ap));
 	if (*str == 'u')
-		return (ft_print_int(ap));
+		return (ft_print_uint(ap));
 	if (*str == 'x')
 		return (0);
 	if (*str == 'X')
