@@ -28,11 +28,10 @@ static int	ft_ptrlen(unsigned long long num)
 
 int	ft_print_ptr(va_list *ap)
 {
-	unsigned long long ptr;
+	unsigned long long	ptr;
 
 	ptr = va_arg(*ap, unsigned long long);
 	ft_putstr_fd("0x", 1);
 	ft_putptr_fd(ptr, 1);
 	return (ft_ptrlen(ptr) + ft_strlen("0x"));
 }
-
