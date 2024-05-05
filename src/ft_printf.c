@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 02:53:18 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/02 02:37:18 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/06 03:27:19 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf(const char *format, ...)
 	result = 0;
 	while (*str)
 	{
-		if (*str == '%')
+		if (*str == '%' && *(str+1) != '\0')
 		{
 			result += ft_put_convert(str, &ap);
 			str++;
