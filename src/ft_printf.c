@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 02:53:18 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/06 19:31:00 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/07 03:27:32 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_printf(const char *format, ...)
 		else
 			temp = ft_putchar_fd(*format, 1);
 		if (temp < 0)
-			return (0);
+			return (-1);
 		result += temp;
 		format++;
 	}
