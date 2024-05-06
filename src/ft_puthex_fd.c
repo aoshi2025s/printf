@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 23:05:22 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/04 04:34:38 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:31:40 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_puthexup_fd(unsigned int num, int fd)
 	}
 	if (num >= 16)
 	{
-		ft_puthex_fd(num / 16, fd);
+		ft_puthexup_fd(num / 16, fd);
 		ft_putchar_fd(BASE_L[num % 16], fd);
 	}
 }
