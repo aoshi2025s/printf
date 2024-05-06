@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 02:53:18 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/05/06 03:27:19 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/05/06 19:31:00 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,27 @@
 int	ft_printf(const char *format, ...)
 {
 	int		result;
-	char	*str;
+	int		temp;
 	va_list	ap;
 
 	va_start(ap, format);
-	str = (char *)format;
-	if (!str)
+	if (!format)
 		return (0);
 	result = 0;
-	while (*str)
+	while (*format)
 	{
-		if (*str == '%' && *(str+1) != '\0')
+		temp = 0;
+		if (*format == '%')
 		{
-			result += ft_put_convert(str, &ap);
-			str++;
+			temp = ft_put_convert(format, &ap);
+			format++;
 		}
 		else
-			result += ft_putchar_fd(*str, 1);
-		str++;
+			temp = ft_putchar_fd(*format, 1);
+		if (temp < 0)
+			return (0);
+		result += temp;
+		format++;
 	}
 	va_end(ap);
 	return (result);

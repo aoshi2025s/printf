@@ -6,7 +6,7 @@
 #    By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 02:51:55 by yoaoki            #+#    #+#              #
-#    Updated: 2024/05/04 05:18:55 by yoaoki           ###   ########.fr        #
+#    Updated: 2024/05/06 19:08:54 by yoaoki           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,4 +58,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
