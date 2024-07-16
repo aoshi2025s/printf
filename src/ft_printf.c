@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 11:57:26 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/07/16 15:30:52 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/07/16 17:07:02 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ int	ft_printf(const char *fmt, ...)
 		if (*fmt == '%')
 		{
 			fmt++;
-			if (*fmt == '\0' || *(fmt + 1) == '\0')
+			if (*fmt != '%' && *fmt != 'c' && *fmt != 's' && *fmt != 'd'
+				&& *fmt != 'i' && *fmt != 'u' && *fmt != 'x' && *fmt != 'X')
 				return (va_end(ptr), -1);
 			convert(fmt, &ptr, &len);
 			fmt++;

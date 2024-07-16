@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:30:14 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/07/16 15:30:16 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/07/16 16:57:29 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,21 @@ int	main(void)
 	printf("len: %d\n", result);
 	expected = printf("%p\n", ptr);
 	printf("len: %d\n", expected);
-	result = ft_printf("%%\n");
-	printf("len: %d\n", result);
 	// edge case
-	printf("%d\n", ft_printf("%"));
+	result = ft_printf("%");
+	printf("\n");
+	printf("len: %d\n", result);
+
+	// printf("%");
 	// same do segv
 	// printf(0);
 	// ft_printf(0);
+	//
+	// error case
+	result = ft_printf("%%");
+	printf("\n");
+	expected = printf("%%");
+	printf("\n");
+	printf("result: %d, expected: %d\n", result, expected);
 	return (0);
 }
