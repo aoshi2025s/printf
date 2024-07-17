@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:30:14 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/07/16 16:57:29 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/07/17 19:29:07 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,17 @@ int	main(void)
 	printf("len: %d\n", result);
 	result = ft_printf("%X\n", 42);
 	printf("len: %d\n", result);
+
+	printf("============%%p test============\n");
 	ptr = "aiueo";
+	printf("result: \n");
 	result = ft_printf("%p\n", ptr);
 	printf("len: %d\n", result);
+
+	printf("expected: \n");
 	expected = printf("%p\n", ptr);
 	printf("len: %d\n", expected);
+	printf("============%% test============\n");
 	// edge case
 	result = ft_printf("%");
 	printf("\n");
