@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 11:55:39 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/07/16 15:31:44 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/07/17 20:02:02 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 int		ft_printf(const char *fmt, ...);
 void	put_char(char c, int *len);
 void	put_string(char *str, int *len);
+void	put_pointer(unsigned long long num, int *len);
 void	put_digit(long long int num, int base, int *len, char *hex);
 
 #endif

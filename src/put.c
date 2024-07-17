@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 14:33:08 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/07/16 15:17:31 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/07/17 20:00:06 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ void	put_string(char *str, int *len)
 		str = "(null)";
 	while (*str)
 		*len += write(1, str++, 1);
+}
+
+void	put_pointer(unsigned long long num, int *len)
+{
+	if (num >= 16)
+		put_pointer((num / 16), len);
+	*len += write(1, &HEX_LOWER[num % 16], 1);
 }
 
 void	put_digit(long long int num, int base, int *len, char *hex)

@@ -6,7 +6,7 @@
 /*   By: yoaoki <yoaoki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 11:57:26 by yoaoki            #+#    #+#             */
-/*   Updated: 2024/07/17 19:20:32 by yoaoki           ###   ########.fr       */
+/*   Updated: 2024/07/17 20:00:43 by yoaoki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	convert(const char *str, va_list *ptr, int *len)
 	if (*str == 'p')
 	{
 		*len += write(1, "0x", 2);
-		put_digit((long long int)va_arg(*ptr, unsigned long long), 16, len,
-			HEX_LOWER);
+		put_pointer(va_arg(*ptr, unsigned long long), len);
 	}
 	if (*str == 'd')
 		put_digit((long long int)va_arg(*ptr, int), 10, len, HEX_LOWER);
@@ -54,7 +53,8 @@ int	ft_printf(const char *fmt, ...)
 		{
 			fmt++;
 			if (*fmt != '%' && *fmt != 'c' && *fmt != 's' && *fmt != 'd'
-				&& *fmt != 'i' && *fmt != 'u' && *fmt != 'x' && *fmt != 'X' && *fmt != 'p')
+				&& *fmt != 'i' && *fmt != 'u' && *fmt != 'x' && *fmt != 'X'
+				&& *fmt != 'p')
 				return (va_end(ptr), -1);
 			convert(fmt, &ptr, &len);
 			fmt++;
